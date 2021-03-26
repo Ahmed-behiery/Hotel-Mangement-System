@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use App\Exports\UserExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class UsersController extends Controller
 {
@@ -128,5 +130,9 @@ class UsersController extends Controller
 
         session()->flash('error', 'This user not exists...');
         return redirect()->route('dashboard.users.index');
+    }
+
+    public function export(){
+        return Excel::download(new UserExport, 'userdata.xlsx');
     }
 }

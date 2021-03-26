@@ -9,11 +9,6 @@
             <div class="card-header bg-info">
                 <h3 class="card-title pt-2 btn btn-dark p-2">Edit Manager <i class="fas fa-arrow-right"></i> {{ $admin->name }}</h3>
 
-                <div class="card-tools">
-                    <a href="{{ route('dashboard.admins.index') }}" type="button" class="btn btn-default bg-danger">
-                    <i class="fas fa-backward"></i> Back
-                    </a>
-                </div>
             </div>
 
             <form class="p-5" action="{{ route('dashboard.admins.update', $admin) }}" method="post"

@@ -8,11 +8,6 @@
             <div class="card-header bg-info">
                 <h3 class="card-title pt-2 btn btn-dark p-2">Edit Manager <i class="fas fa-arrow-right"></i> {{ $user->name }}</h3>
 
-                <div class="card-tools">
-                    <a href="{{ route('dashboard.users.index') }}" type="button" class="btn btn-default bg-danger">
-                        <i class="fa fa-backward"></i> Back
-                    </a>
-                </div>
             </div>
 
             <form class="p-5" action="{{ route('dashboard.users.update', $user) }}" method="post"

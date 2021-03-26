@@ -3,20 +3,16 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-2"></div>
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header">
-                <h3 class="card-title pt-2">Create New Manager</h3>
+    <div class="col-md-12">
+    <div class="card w-100 mt-5">
+    <div class="card-header bg-info">
 
-                <div class="card-tools">
-                    <a href="{{ route('dashboard.admins.index') }}" type="button" class="btn btn-default bg-primary">
-                        <i class="fa fa-backspace"></i> Back
-                    </a>
+                <div class="w-50" style="margin: auto">
+                     <h3 class="pt-2 text-center p-2 text-warning" style="margin: auto; letter-spacing: 8px">Create New Manager</h3>
                 </div>
-            </div>
+    </div>
 
-            <form class="p-3" action="{{ route('dashboard.admins.store') }}" method="post"
+            <form class="p-5" action="{{ route('dashboard.admins.store') }}" method="post"
                 enctype="multipart/form-data">
                 {{ csrf_field() }}
                 {{ method_field('post') }}
@@ -91,7 +87,7 @@
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                    <span class="input-group-text"> <i class="fas fa-address-card"></i></span>
                                 </div>
                                 <input type="text" name='national_id' class="form-control" value="{{ old('national_id') ?? '' }}" placeholder="Your National ID">
                             </div>
@@ -113,7 +109,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary d-block " style="width: 100%">Save</button>
+                <button type="submit" class="btn btn-success mt-4 d-block" style="width: 75%; margin: auto">Save</button>
 
             </form>
             <!-- /.form-body -->

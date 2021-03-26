@@ -4,6 +4,7 @@
 
 <div class="card">
     <div class="card-header bg-info mb-1">
+        <a href="{{route('dashboard.export')}}" class="btn btn-danger p-2 ml-1"><i class="fas fa-download"></i> Export Data</a>
         <h3 class="card-title pt-2 btn btn-dark p-2"> Users : {{ $count }} </h3>
 
         @if (auth()->user()->hasRole('admin'))

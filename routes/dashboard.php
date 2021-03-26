@@ -19,6 +19,8 @@ Route::middleware(['auth:admin'])->prefix('dashboard')->as('dashboard.')->group(
 
     Route::get('/', 'DashboardController@index')->name('home');
 
+    Route::get('export', 'UsersController@export')->name('export');
+
     Route::resource('admins', 'AdminsController')->middleware('role:admin');
 
     Route::resource('users', 'UsersController');
