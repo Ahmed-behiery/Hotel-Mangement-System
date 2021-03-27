@@ -1,7 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if ($errors->any())
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-danger pb-1">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            -&nbsp;{{ $error }}<br>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+@endif
 <div class="row">
     <div class="col-md-12">
     <div class="card w-100 mt-5">
@@ -25,7 +40,6 @@
                         </div>
                         <input type="email" name='email' class="form-control" placeholder="Email :" value="{{ old('email') ?? '' }}">
                     </div>
-                    @error('email') <span class="red"> {{ $message }} </span> @enderror
                 </div>
 
                 <div class="row">
@@ -38,7 +52,6 @@
                                 </div>
                                 <input type="password" name='password' class="form-control" placeholder="Password">
                             </div>
-                            @error('password') <span class="red"> {{ $message }} </span> @enderror
                         </div>
                     </div>
 
@@ -51,7 +64,6 @@
                                 </div>
                                 <input type="password" name='password_confirmation' class="form-control" placeholder="Password Confirmation" autocomplete>
                             </div>
-                            @error('password') <span class="red"> {{ $message }} </span> @enderror
                         </div>
                     </div>
 
@@ -64,7 +76,6 @@
                                 </div>
                                 <input type="text" name="name" class="form-control" placeholder="Name :" value="{{ old('name') ?? '' }}">
                             </div>
-                            @error('name') <span class="red"> {{ $message }} </span> @enderror
                         </div>
                     </div>
 
@@ -77,7 +88,6 @@
                                 </div>
                                 <input type="text" name='phone' class="form-control" placeholder="Phone :" value="{{ old('phone') ?? '' }}">
                             </div>
-                            @error('phone') <span class="red"> {{ $message }} </span> @enderror
                         </div>
                     </div>
 
@@ -90,7 +100,6 @@
                                 </div>
                                 <input type="text" name='national_id' class="form-control" value="{{ old('national_id') ?? '' }}" placeholder="Your National ID">
                             </div>
-                            @error('national_id') <span class="red"> {{ $message }} </span> @enderror
                         </div>
                     </div>
 
@@ -103,7 +112,6 @@
                                 </div>
                                 <input type="file" name='image' class="form-control image" placeholder="Your Image" value="{{ old('image') ?? '' }}">
                             </div>
-                            @error('image') <span class="red"> {{ $message }} </span> @enderror
                         </div>
                     </div>
                 </div>

@@ -41,7 +41,7 @@
                     <ul class="nav nav-treeview">
                         @if (auth()->user()->hasRole(['admin','manager']))
                         <li class="nav-item">
-                            <a href="{{ route('dashboard.users.index') }}" class="nav-link">
+                            <a href="{{ route('dashboard.receptionists.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i> <p> Receptionists </p>
                             </a>
                         </li>
@@ -122,7 +122,7 @@
                     <ul class="nav nav-treeview">
                         @if (auth()->user()->hasRole(['admin','manager']))
                         <li class="nav-item">
-                            <a href="{{ route('dashboard.rooms.index') }}" class="nav-link">
+                            <a href="{{ route('dashboard.reservations.index') }}" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i> <p> Reservation </p>
                             </a>
                         </li>

@@ -17,6 +17,7 @@
         </div>
     </div>
 @endif
+
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
@@ -25,36 +26,54 @@
                 <h3 class="card-title">Edit You Profile</h3>
             </div>
 
-            <form class="p-3" action="{{ route('dashboard.floors.update', $floor) }}" method="post"
+            <form class="p-3" action="{{ route('dashboard.reservations.update', $reservation) }}" method="post"
                 enctype="multipart/form-data">
                 {{ csrf_field() }}
                 {{ method_field('PATCH') }}
 
                 {{-- INPUT [ Name | Number ] --}}
                
-                <!-- Name Input -->
+                <!-- Client_id -->
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-at"></i> </span>
                         </div>
-                        <input type="text" name='name' class="form-control" placeholder="name :" value="{{ old('name') ?? $floor->name }}">
+                        <input type="number" name='client_id' class="form-control" placeholder="Client id : ">
                     </div>
-                    @error('name') <span class="red"> {{ $message }} </span> @enderror
-                </div><!-- End Name Input -->
+                </div><!-- End Client_id -->
 
-                 <!-- Number Input -->
+                 <!-- Room id -->
                  <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-at"></i> </span>
                         </div>
-                        <input type="number" name='number' class="form-control" placeholder="number :" value="{{ old('number') ?? $floor->number }}">
+                        <input type="number" name='room_id' class="form-control" placeholder="Room id : ">
                     </div>
-                    @error('name') <span class="red"> {{ $message }} </span> @enderror
-                </div><!-- End Number Input -->
+                </div><!-- End Room_id -->
 
-                <button type="submit" class="btn btn-primary d-block " style="width: 100%">Update</button>
+                <!-- accompany number -->
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-at"></i> </span>
+                        </div>
+                        <input type="number" name='accompany_number' class="form-control" placeholder="Accompany Number  : ">
+                    </div>
+                </div><!-- End accompany number -->
+
+               <!-- paid price -->
+               <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-at"></i> </span>
+                        </div>
+                        <input type="number" name='paid_price' class="form-control" placeholder="Paid Price  : ">
+                    </div>
+                </div><!--End paid price -->
+
+                <!-- <button type="submit" class="btn btn-primary d-block " style="width: 100%">Update</button> -->
 
             </form>
             <!-- /.form-body -->

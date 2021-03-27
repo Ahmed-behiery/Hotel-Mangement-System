@@ -25,7 +25,6 @@
                         <input type="email" name='email' class="form-control" placeholder="Email :"
                             value="{{ old('email') ?? $admin->email }}">
                     </div>
-                    @error('email') <span class="red"> {{ $message }} </span> @enderror
                 </div>
 
                 <div class="row">
@@ -38,7 +37,6 @@
                                 </div>
                                 <input type="password" name='password' class="form-control" placeholder="Password">
                             </div>
-                            @error('password') <span class="red"> {{ $message }} </span> @enderror
                         </div>
                     </div>
 
@@ -51,7 +49,6 @@
                                 </div>
                                 <input type="password" name='password_confirmation' class="form-control" placeholder="Password Confirmation" autocomplete>
                             </div>
-                            @error('password') <span class="red"> {{ $message }} </span> @enderror
                         </div>
                     </div>
 
@@ -65,7 +62,6 @@
                                 <input type="text" name="name" class="form-control" placeholder="Name :"
                                     value="{{ old('name') ?? $admin->name }}">
                             </div>
-                            @error('name') <span class="red"> {{ $message }} </span> @enderror
                         </div>
                     </div>
 
@@ -78,7 +74,6 @@
                                 </div>
                                 <input type="text" name='phone' class="form-control" placeholder="Phone :" value="{{ old('phone') ?? $admin->phone }}">
                             </div>
-                            @error('phone') <span class="red"> {{ $message }} </span> @enderror
                         </div>
                     </div>
 
@@ -91,7 +86,6 @@
                                 </div>
                                 <input type="text" name='national_id' class="form-control" value="{{ old('national_id') ?? $admin->national_id }}" placeholder="Your National ID">
                             </div>
-                            @error('national_id') <span class="red"> {{ $message }} </span> @enderror
                         </div>
                     </div>
 
@@ -105,7 +99,6 @@
                                 <input type="file" name='image' class="form-control image" placeholder="Your Image"
                                     value="{{ old('image') ?? $admin->image }}">
                             </div>
-                            @error('image') <span class="red"> {{ $message }} </span> @enderror
                         </div>
                     </div>
                 </div>

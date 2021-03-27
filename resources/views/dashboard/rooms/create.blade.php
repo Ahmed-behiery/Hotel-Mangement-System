@@ -1,6 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
+@if ($errors->any())
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-danger pb-1">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            -&nbsp;{{ $error }}<br>
+                        @endforeach
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+@endif
 
 <div class="row">
 <div class="col-md-12">
