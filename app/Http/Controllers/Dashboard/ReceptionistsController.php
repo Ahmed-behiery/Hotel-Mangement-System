@@ -1,10 +1,10 @@
 <?php
 namespace App\Http\Controllers\Dashboard;
-use App\DataTables\ReceptionstsDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use App\DataTables\ReceptionstsDataTable;
 
 class ReceptionistsController extends Controller
 {
@@ -110,6 +110,15 @@ class ReceptionistsController extends Controller
         }
 
         session()->flash('success', 'Receptionist Successfuly Deleted');
+        return redirect()->route('dashboard.receptionists.index');
+    }
+    public function ban_receptionist(Admin $receptionist){
+        $receptionist->ban([ 'expired_at' => '+1 month', 'comment' => 'You are Fired!']);
+        return redirect()->route('dashboard.receptionists.index');
+    }  
+
+    public function unban_receptionist(Admin $receptionist){
+        $receptionist->unban();
         return redirect()->route('dashboard.receptionists.index');
     }
 }

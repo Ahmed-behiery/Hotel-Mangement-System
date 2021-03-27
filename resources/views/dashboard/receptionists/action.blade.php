@@ -13,6 +13,12 @@
     <button type="submit" class="btn btn-danger delete btn-sm" onclick="return confirm('Are you sure ?')">
         <i class="fa fa-trash"></i> Delete
     </button>
+
 </form><!-- end of form -->
+    <!--for ban  -->
+    <a href="{{ route('dashboard.ban_receptionist', $id) }}" class="btn btn-warning btn-sm mr-1 ml-1">
+    <i class="fas fa-user-slash"> </i> Ban
+</a>
+<!--end ban  -->
 
 </div>

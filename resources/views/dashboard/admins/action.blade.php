@@ -2,6 +2,8 @@
 <!-- <a class="btn btn-success btn-sm mr-1" href="#">
     <i class="far fa-eye"></i> <span>View</span>
 </a> -->
+
+
 <a href="{{ route('dashboard.admins.edit', $id) }}" class="btn btn-info btn-sm mr-1">
     <i class="fas fa-pencil-alt"> </i> Edit
 </a>
@@ -14,5 +16,6 @@
         <i class="fa fa-trash"></i> Delete
     </button>
 </form><!-- end of form -->
+
 
 </div>

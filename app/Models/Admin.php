@@ -8,9 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laratrust\Traits\LaratrustUserTrait;
 
-class Admin extends Authenticatable
-{
-    use LaratrustUserTrait, HasFactory, Notifiable;
+use Cog\Contracts\Ban\Bannable as BannableContract;
+use Cog\Laravel\Ban\Traits\Bannable;
+
+
+class Admin extends Authenticatable implements BannableContract
+{ 
+    use LaratrustUserTrait, HasFactory, Notifiable, Bannable;
 
     protected $guard = [];
     protected $fillable = ['name', 'email', 'password', 'created_by', 'image', 'phone', 'national_id'];
