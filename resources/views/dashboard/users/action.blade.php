@@ -1,7 +1,7 @@
 <div class="d-flex">
-<a class="btn btn-success btn-sm mr-1" href="#">
+<!-- <a class="btn btn-success btn-sm mr-1" href="#">
 <i class="far fa-eye"></i> <span>View</span>
-</a>
+</a> -->
 
 
 @if($approved_by == auth()->user()->id || auth()->user()->hasRole('admin'))

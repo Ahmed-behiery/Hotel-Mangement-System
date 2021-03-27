@@ -1,7 +1,7 @@
 <div class="d-flex">
-<a class="btn btn-primary btn-sm mr-1" href="#">
+<!-- <a class="btn btn-primary btn-sm mr-1" href="#">
     <i class="fas fa-folder"> </i> View
-</a>
+</a> -->
 <a href="{{ route('dashboard.receptionists.edit', $id) }}" class="btn btn-info btn-sm mr-1">
     <i class="fas fa-pencil-alt"> </i> Edit
 </a>

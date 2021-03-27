@@ -1,6 +1,6 @@
-<a class="btn btn-primary btn-sm mb-1" href="#">
+<!-- <a class="btn btn-primary btn-sm mb-1" href="#">
     <i class="fas fa-folder"> </i> View
-</a>
+</a> -->
 
 @if($client_id == auth()->user()->id || auth()->user()->hasRole('admin','manager'))
     <a href="{{ route('dashboard.reservations.edit', $id) }}" class="btn btn-info btn-sm mb-1">

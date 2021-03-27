@@ -1,7 +1,7 @@
 <div class="d-flex">
-<a class="btn btn-success btn-sm mr-1" href="#">
+<!-- <a class="btn btn-success btn-sm mr-1" href="#">
     <i class="fas fa-eye"> </i> View
-</a>
+</a> -->
 
 @if($manager_id == auth()->user()->id || auth()->user()->hasRole('admin','manager'))
     <a href="{{ route('dashboard.floors.edit', $id) }}" class="btn btn-info btn-sm mr-1">

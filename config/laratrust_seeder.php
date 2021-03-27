@@ -15,10 +15,14 @@ return [
         'admin' => [
             'admins' => 'c,r,u,d',
             'users' => 'c,r,u,d',
-            'profile' => 'r,u'
+            'floors' => 'c,r,u,d',
+            'rooms' => 'c,r,u,d',
+            'reservations' => 'c,r,u,d',
         ],
         'manager' => [
-            'profile' => 'r,u',
+            'users' => 'c,r,u,d',
+            'floors' => 'c,r,u,d',
+            'rooms' => 'c,r,u,d',
         ],
         'receptionist' => [
             'users' => 'c,r,u,d',

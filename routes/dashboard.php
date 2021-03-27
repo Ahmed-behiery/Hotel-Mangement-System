@@ -23,11 +23,11 @@ Route::middleware(['auth:admin'])->prefix('dashboard')->as('dashboard.')->group(
 
     Route::resource('admins', 'AdminsController')->middleware('role:admin');
 
-    Route::resource('users', 'UsersController');
+    Route::resource('users', 'UsersController')->middleware('role:admin|manager|receptionist');
     Route::get('users/{user}/approve', 'UsersController@approve')->name('users.approve');
-    Route::resource('floors', 'FloorsController')->middleware('role:admin');
-    Route::resource('receptionists', 'ReceptionistsController')->middleware('role:admin');
-    Route::resource('reservations', 'ReservationsController')->middleware('role:admin');
+    Route::resource('floors', 'FloorsController')->middleware('role:admin|manager');
+    Route::resource('receptionists', 'ReceptionistsController')->middleware('role:admin|manager');
+    Route::resource('reservations', 'ReservationsController')->middleware('role:admin|manager|receptionist');
     Route::resource('rooms', 'RoomsController');
 });
 

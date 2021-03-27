@@ -41,7 +41,6 @@ class AdminSeeder extends Seeder
                 'remember_token' => Str::random(10),
                 'created_by'     => 1,
             ]);
-
             $admin->attachRole('manager');
         }
 
