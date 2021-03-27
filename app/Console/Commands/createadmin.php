@@ -42,7 +42,7 @@ class createadmin extends Command
         $email = $this->option('email');
         $password = $this->option('password');
         $admin = Admin::create([
-            'name'           => 'admin0',
+            'name'           => 'admin',
             'email'          => $email,
             'password'       => bcrypt($password),
             'image'          => 'default.jpg',

@@ -24,13 +24,13 @@ class AdminsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'                   => 'required|string|min:5|max:25|unique:admins,name',
-            'phone'                  => 'required|string|min:11|max:25|unique:admins,phone',
+            'name'                   => 'required|string|min:4|max:50|unique:admins,name',
+            'phone'                  => 'required|string|min:11|max:11|unique:admins,phone',
             'national_id'            => 'required|numeric|digits:14|unique:admins,national_id',
             'email'                  => 'required|email|unique:admins,email',
-            'password'               => 'required|min:3|max:25|confirmed',
+            'password'               => 'required|min:6|max:30|confirmed',
             'password_confirmation'  => 'same:password',
-            'image'                  => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:8080',
+            'image'                  => 'nullable|image|mimes:jpeg,png,jpg|max:8080',
         ]); // This For Validation The Inputs
 
         $request_data = $request->except(['password', 'password_confirmation', 'permissions', 'image']);
@@ -67,13 +67,13 @@ class AdminsController extends Controller
     public function update(Request $request, Admin $admin)
     {
         $request->validate([
-            'name'                   => 'required|string|min:5|max:25|unique:admins,name,' . $admin->id,
-            'phone'                  => 'required|string|min:11|max:25|unique:admins,phone,' . $admin->id,
+            'name'                   => 'required|string|min:4|max:50|unique:admins,name,' . $admin->id,
+            'phone'                  => 'required|string|min:11|max:11|unique:admins,phone,' . $admin->id,
             'national_id'            => 'required|numeric|digits:14|unique:admins,national_id,' . $admin->id,
             'email'                  => 'required|email|unique:admins,email,' . $admin->id,
-            'password'               => 'nullable|min:3|max:25|confirmed',
+            'password'               => 'nullable|min:6|max:30|confirmed',
             'password_confirmation'  => 'nullable|same:password',
-            'image'                  => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:8080',
+            'image'                  => 'nullable|image|mimes:jpeg,png,jpg|max:8080',
         ]); // This For Validation The Inputs
 
         $request_data = $request->except(['password', 'password_confirmation', 'permissions', 'image']);

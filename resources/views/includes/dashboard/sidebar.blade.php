@@ -12,10 +12,10 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
                 <li class="nav-item has-treeview menu-open">
-                    <a href="#" class="nav-link active">
+                    <a href="#" class="nav-link active bg-warning">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Create  Manger
+                            Manager Section
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -23,28 +23,112 @@
                         @if (auth()->user()->hasRole('admin'))
                             <li class="nav-item">
                                 <a href="{{ route('dashboard.admins.index') }}" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i> <p>Create  Manger</p>
+                                    <i class="nav-icon fas fa-th"></i> <p>Managers</p>
                                 </a>
                             </li>
                         @endif
                     </ul>
                 </li>
 
-                @if (auth()->user()->hasRole(['admin','manager']))
-                <li class="nav-item">
-                    <a href="{{ route('dashboard.users.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i> <p> Users </p>
+                <li class="nav-item has-treeview menu-open">
+                    <a href="#" class="nav-link active bg-warning">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Receptionist Section
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        @if (auth()->user()->hasRole(['admin','manager']))
+                        <li class="nav-item">
+                            <a href="{{ route('dashboard.users.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i> <p> Receptionists </p>
+                            </a>
+                        </li>
+                        @endif
+                    </ul>
                 </li>
-                @endif
 
-                @if (auth()->user()->hasRole(['admin','manager']))
-                <li class="nav-item">
-                    <a href="{{ route('dashboard.rooms.index') }}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i> <p> Rooms </p>
+                <li class="nav-item has-treeview menu-open">
+                    <a href="#" class="nav-link active bg-warning">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            User Section
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        @if (auth()->user()->hasRole(['admin','manager']))
+                        <li class="nav-item">
+                            <a href="{{ route('dashboard.users.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i> <p> Users </p>
+                            </a>
+                        </li>
+                        @endif
+                    </ul>
                 </li>
-                @endif
+
+
+
+                <!-- menu for Floors -->
+                <li class="nav-item has-treeview menu-open">
+                    <a href="#" class="nav-link active bg-warning">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Floor Section
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        @if (auth()->user()->hasRole('admin'))
+                            <li class="nav-item">
+                                <a href="{{ route('dashboard.floors.index') }}" class="nav-link">
+                                    <i class="nav-icon fas fa-th"></i> <p>Floors</p>
+                                </a>
+                            </li>
+                        @endif
+                    </ul>
+                </li>
+
+                <!-- end menu for Floors -->
+
+                <li class="nav-item has-treeview menu-open">
+                    <a href="#" class="nav-link active bg-warning">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Room Section
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        @if (auth()->user()->hasRole(['admin','manager']))
+                        <li class="nav-item">
+                            <a href="{{ route('dashboard.rooms.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i> <p> Rooms </p>
+                            </a>
+                        </li>
+                        @endif
+                    </ul>
+                </li>
+
+                <li class="nav-item has-treeview menu-open">
+                    <a href="#" class="nav-link active bg-warning">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Reservation Section
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        @if (auth()->user()->hasRole(['admin','manager']))
+                        <li class="nav-item">
+                            <a href="{{ route('dashboard.rooms.index') }}" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i> <p> Reservation </p>
+                            </a>
+                        </li>
+                        @endif
+                    </ul>
+                </li>
 
             </ul>
         </nav>

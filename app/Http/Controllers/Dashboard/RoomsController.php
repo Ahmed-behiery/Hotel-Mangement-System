@@ -23,11 +23,11 @@ class RoomsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'            => 'required|string|min:5|max:50|unique:rooms,name',
-            'number'          => 'required|numeric|min:2|max:25|unique:rooms,number',
+            'name'            => 'required|string|min:4|max:50|unique:rooms,name',
+            'number'          => 'required|numeric|min:1000|unique:rooms,number',
             'size'            => 'required|numeric|min:1|max:5',
             'price'           => 'required',
-            'floor'           => 'required|numeric|min:1|max:10',
+            'floor'           => 'required|numeric|min:1000',
         ]); // This For Validation The Inputs
 
         $request['admin_id'] = auth()->user()->id;
@@ -49,11 +49,11 @@ class RoomsController extends Controller
     public function update(Request $request, Room $room)
     {
         $request->validate([
-            'name'            => 'required|string|min:5|max:50|unique:rooms,name,' . $room->id,
-            'number'          => 'required|numeric|min:2|max:25|unique:rooms,number,' . $room->id,
+            'name'            => 'required|string|min:4|max:50|unique:rooms,name,' . $room->id,
+            'number'          => 'required|numeric|min:1000|unique:rooms,number,' . $room->id,
             'size'            => 'required|numeric|min:1|max:5',
             'price'           => 'required',
-            'floor'           => 'required|numeric|min:1|max:10',
+            'floor'           => 'required|numeric|min:1000',
         ]); // This For Validation The Inputs
 
         $room->update($request->all());

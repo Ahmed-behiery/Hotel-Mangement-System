@@ -26,7 +26,7 @@ class AdminFactory extends Factory
             'name'           => $this->faker->firstName(),
             'email'          => $this->faker->unique()->safeEmail,
             'national_id'    => $this->faker->ean13(),
-            'password'       => bcrypt(123),
+            'password'       => bcrypt(1234567890),
             'phone'          => $this->faker->phoneNumber(),
             'image'          => $this->faker->image(public_path('uploads/images/admins'), 150, 150, 'users', false),
             'remember_token' => Str::random(10),

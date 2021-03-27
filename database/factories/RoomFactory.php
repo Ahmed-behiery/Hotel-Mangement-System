@@ -26,7 +26,7 @@ class RoomFactory extends Factory
             'name'          => $this->faker->name(),
             'number'        => $this->faker->unique()->numberBetween(1, 100),
             'size'          => $this->faker->numberBetween(1, 5),
-            'price'         => '50.00',
+            'price'         => '100.00',
             'floor'         => $this->faker->unique()->numberBetween(1000,1100),
             'reservation'   => 0,
             'user_id'       => null,
