@@ -7,6 +7,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>HOTEL</title>
+    <!-- for charts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <!-- end for charts -->
+
+
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('assets/dashboard/plugins/fontawesome-free/css/all.min.css') }}">
